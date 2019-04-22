@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1F967C37-98D9-4C03-9896-60CB71B6ACCE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QbIntegration</RootNamespace>
+    <AssemblyName>QbIntegration</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ComponentFactory.Krypton.Toolkit, Version=4.3.1.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e" />
+    <Reference Include="Interop.QBFC13, Version=13.0.0.23, Culture=neutral, PublicKeyToken=31d8aec643e18259">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Debug\Interop.QBFC13.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.10.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="clsHelper\ClsCommon.cs" />
+    <Compile Include="clsHelper\clsDBOperation.cs" />
+    <Compile Include="FrmAppsLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAppsLog.designer.cs">
+      <DependentUpon>FrmAppsLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHistory.designer.cs">
+      <DependentUpon>FrmHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMySqlConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMySqlConfig.designer.cs">
+      <DependentUpon>FrmMySqlConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmQBConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmQBConfig.designer.cs">
+      <DependentUpon>FrmQBConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmQBSync.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmQBSync.Designer.cs">
+      <DependentUpon>FrmQBSync.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmScheduler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmScheduler.designer.cs">
+      <DependentUpon>FrmScheduler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="QBClass\CommonRef.cs" />
+    <Compile Include="QBClass\QBAccounts.cs" />
+    <Compile Include="QBClass\QBConnection.cs" />
+    <Compile Include="QBClass\QBCustomer.cs" />
+    <Compile Include="QBClass\QBInvoice.cs" />
+    <Compile Include="QBClass\QBItemInventory.cs" />
+    <Compile Include="QBClass\QBItemInventoryAssembly.cs" />
+    <Compile Include="QBClass\QBItemNonInventory.cs" />
+    <Compile Include="QBClass\QBItemOtherCharge.cs" />
+    <Compile Include="QBClass\QBItemService.cs" />
+    <Compile Include="QBClass\QBItemSubTotal.cs" />
+    <Compile Include="QBClass\QBReceivePayments.cs" />
+    <Compile Include="QBClass\QBSalesTaxItem.cs" />
+    <EmbeddedResource Include="FrmAppsLog.resx">
+      <DependentUpon>FrmAppsLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHistory.resx">
+      <DependentUpon>FrmHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMySqlConfig.resx">
+      <DependentUpon>FrmMySqlConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmQBConfig.resx">
+      <DependentUpon>FrmQBConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmQBSync.resx">
+      <DependentUpon>FrmQBSync.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmScheduler.resx">
+      <DependentUpon>FrmScheduler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings1.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
